@@ -21,5 +21,7 @@ ingredients.map((item) => {
 });
 // console.log(el);
 
-list.prepend(el[0], el[1], el[2], el[3], el[4], el[5]);
-console.log(list);
+el.join(" ");
+list.prepend(...el);
+
+// console.log(list);
