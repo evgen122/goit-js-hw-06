@@ -20,12 +20,22 @@ const gallery = document.querySelector(".gallery");
 const arrGallery = [];
 
 images.map((el) => {
-  arrGallery.push(`<li> <img url = ${el.url} alt = ${el.alt} > </li>`);
+  let itemGallery = `<li> 
+    <img src="${el.url}" alt = "${el.alt}" width = 500px /> 
+    </li>`;
+  arrGallery.push(itemGallery);
 });
+// .join("");
 
 console.log("arrGallery", arrGallery);
-// arrGallery.join(" ");
+arrGallery.join("");
 
-gallery.insertAdjacentHTML("afterbegin", arrGallery);
+gallery.style.listStyleType = "none";
+gallery.style.display = "flex";
+gallery.style.flexWrap = "wrap";
+gallery.style.gap = "20px";
+gallery.style.justifyContent = "center";
+
+gallery.insertAdjacentHTML("beforeend", arrGallery);
 
 console.log("gallery", gallery);
