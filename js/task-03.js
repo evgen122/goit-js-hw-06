@@ -17,17 +17,23 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
+const arrGallery = [];
 images.map((el) => {
   const itemGallery = document.createElement("li");
 
-  console.log(itemGallery);
-
-  itemGallery.prepend;
-
   const image = document.createElement("img");
-  image.crs = el.url;
+  image.src = el.url;
   image.alt = el.alt;
 
-  itemGallery.append("img");
-  console.log(el);
+  itemGallery.prepend(image);
+
+  arrGallery.push(itemGallery);
+
+  console.log(itemGallery);
+  // console.log(el);
 });
+
+console.log(arrGallery);
+arrGallery.join(" ");
+
+gallery.insertAdjacentHTML(afterbegin, arrGallery);
