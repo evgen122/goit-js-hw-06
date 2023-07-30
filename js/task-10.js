@@ -21,9 +21,18 @@ const elements = {
 elements.buttonCreate.addEventListener("click", createBoxes);
 
 function createBoxes(amount) {
+  const arrElements = [];
+  let itemElements;
   amount = elements.inputNumber.value;
   // console.log(amount);
   for (let i = 1; i <= amount; i += 1) {
-    document.createElement("div");
+    itemElements = document.createElement("div");
+    itemElements.style.width = `${20 + 10 * i}px`;
+    itemElements.style.height = `${20 + 10 * i}px`;
+    itemElements.style.backgroundColor = getRandomHexColor();
+    arrElements.push(itemElements);
   }
+  arrElements.join(" ");
+  // console.log(arrElements);
+  elements.divBoxes.append(...arrElements);
 }
