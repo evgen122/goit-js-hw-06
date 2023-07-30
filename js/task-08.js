@@ -11,9 +11,15 @@ function handlerSubmit(evt) {
 
   console.dir(evt.currentTarget);
 
-  const {email, password} = evt.currentTarget.elements;
+  const {email, password, submit} = evt.currentTarget.elements;
 
   console.log(email);
-  console.log(email.v);
   console.log(password);
+
+  if (email.value === "" || password.value === "") {
+    return console.log("Please fill in all the fields!");
+  }
+  const info = {Email: email.value, Password: password.value};
+  console.log(info);
+  evt.currentTarget.reset();
 }
