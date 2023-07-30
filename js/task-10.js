@@ -10,6 +10,7 @@ const elements = {
   buttonCreate: document.querySelector("button[data-create]"),
   buttonDestroy: document.querySelector("button[data-destroy]"),
   inputNumber: document.querySelector("input"),
+  divBoxes: document.querySelector("#boxes"),
   // span: document.querySelector(".color"),
 };
 
@@ -22,4 +23,7 @@ elements.buttonCreate.addEventListener("click", createBoxes);
 function createBoxes(amount) {
   amount = elements.inputNumber.value;
   // console.log(amount);
+  for (let i = 1; i <= amount; i += 1) {
+    document.createElement("div");
+  }
 }
