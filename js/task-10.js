@@ -11,20 +11,16 @@ const elements = {
   buttonDestroy: document.querySelector("button[data-destroy]"),
   inputNumber: document.querySelector("input"),
   divBoxes: document.querySelector("#boxes"),
-  // span: document.querySelector(".color"),
 };
 
-// console.dir(elements.buttonCreate);
-// console.log(elements.buttonDestroy);
-// console.log(elements.inputNumber);
-
 elements.buttonCreate.addEventListener("click", createBoxes);
+elements.buttonDestroy.addEventListener("click", destroyBoxes);
+
+const arrElements = [];
 
 function createBoxes(amount) {
-  const arrElements = [];
   let itemElements;
   amount = elements.inputNumber.value;
-  // console.log(amount);
   for (let i = 1; i <= amount; i += 1) {
     itemElements = document.createElement("div");
     itemElements.style.width = `${20 + 10 * i}px`;
@@ -33,6 +29,9 @@ function createBoxes(amount) {
     arrElements.push(itemElements);
   }
   arrElements.join(" ");
-  // console.log(arrElements);
   elements.divBoxes.append(...arrElements);
+}
+
+function destroyBoxes() {
+  elements.divBoxes.innerHTML = "";
 }
