@@ -19,7 +19,7 @@ function handlerSubmit(evt) {
   if (email.value === "" || password.value === "") {
     return console.log("Please fill in all the fields!");
   } else {
-    const info = {Email: email.value, Password: password.value};
+    const info = {email: email.value, password: password.value};
     console.log(info);
     evt.currentTarget.reset();
   }
