@@ -20,15 +20,17 @@ const gallery = document.querySelector(".gallery");
 const arrGallery = [];
 
 images.map((el) => {
-  let itemGallery = `<li> 
-    <img src="${el.url}" alt = "${el.alt}" width = 500px /> 
+  const itemGallery = `<li> 
+  <img src="${el.url}" alt = "${el.alt}" width = "500" /> 
     </li>`;
   arrGallery.push(itemGallery);
 });
-// .join("");
 
 console.log("arrGallery", arrGallery);
-arrGallery.join("");
+
+const arrGalleryJoin = arrGallery.join("");
+
+console.log("arrGallery.join", arrGalleryJoin);
 
 gallery.style.listStyleType = "none";
 gallery.style.display = "flex";
@@ -36,6 +38,4 @@ gallery.style.flexWrap = "wrap";
 gallery.style.gap = "20px";
 gallery.style.justifyContent = "center";
 
-gallery.insertAdjacentHTML("beforeend", arrGallery);
-
-console.log("gallery", gallery);
+gallery.insertAdjacentHTML("beforeend", arrGalleryJoin);
