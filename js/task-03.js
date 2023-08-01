@@ -26,16 +26,10 @@ images.map((el) => {
   arrGallery.push(itemGallery);
 });
 
-console.log("arrGallery", arrGallery);
-
-const arrGalleryJoin = arrGallery.join("");
-
-console.log("arrGallery.join", arrGalleryJoin);
-
 gallery.style.listStyleType = "none";
 gallery.style.display = "flex";
 gallery.style.flexWrap = "wrap";
 gallery.style.gap = "20px";
 gallery.style.justifyContent = "center";
 
-gallery.insertAdjacentHTML("beforeend", arrGalleryJoin);
+gallery.insertAdjacentHTML("beforeend", arrGallery.join(""));
